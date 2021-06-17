@@ -1,11 +1,13 @@
 from flask import Flask,render_template
 from db.database import init_db
+from db.models import Tweet
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    tweets = Tweet.all()
+    return render_template("index.html",tweets=tweets)
 
 @app.route("/shikiso")
 def shikisoshikiso():
@@ -15,7 +17,7 @@ def shikisoshikiso():
 @app.route("/tweet")
 def tweet():
     return render_template("tweet.html")
-  
+
 @app.route("/shikiso",methods=["post"])
 def post():
     name = request.args.get("name")
