@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>document</title>
 </head>
 <body>
   <form action="/index" method="POST">
@@ -12,6 +12,8 @@
     <input type="submit" value="Submit">
   <h1>horisho</h1>
   </form>
-
+  {% for tweet in tweets %}
+  <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
+  {% endfor %}
 </body>
 </html>
