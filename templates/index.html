@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index-shikiso.css">
 </head>
 <body>
-  <form action="/index" method="POST">
-    <input type="text" name="name" placeholder="名前を入力してください">
-    <input type="submit" value="Submit">
-  <h1>horisho</h1>
-  </form>
-  {% for tweet in tweets %}
-  <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
-  {% endfor %}
+    <div class="header">
+        <div class="header-logo">全学教育棟C25</div>
+    </div>
+    <div class="main">
+        <div class="circle1"></div>
+        <div class="account-name1">赤い色素</div>
+        　<div class="tweet1">フランス語の先生は土佐犬とその飼い主の緑ジャージと白スニーカーが好き</div>
+        {% for tweet in tweets %}
+        <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
+        {% endfor %}
+    </div>
+    <div class="footer">
+
+    </div>
+    <form action="/index" method="POST">
+        <input type="text" name="name" placeholder="名前を入力してください">
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
