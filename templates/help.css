@@ -1,26 +1,141 @@
-.box-a {
+header {
+    color:#fff;
     width: 100%;
-    height:180px;
-    background-color:gold;
+    height:50px;
+    background-color:#6fcf97 ;
+    padding:10px;
 }
 
-.box-b {
-    width:30%;
-    height:180px;
+.navbar-brand {
+    color:#fff;
+}
+
+.place-bar {
+    padding: 5px;
+    color:#fff;
+    background-color:#c4c4c4;
+    width:100%;
+    height:40px;
+}
+
+.leaves1  {
+    display:flex;
+    margin: 5px;
+}
+
+li {
+    list-style: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
     float:left;
-    background-color: blueviolet;
 }
 
-.box-c {
-    width:20%;
-    height:180px;
-    float:right;
-    background-color: crimson;
+.icon1 {
+    width: 80px;
+    height: 80px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    margin: 10px;
+    margin-bottom: 80px;
 }
 
-.box-d {
-    width:500px;
-    height:500px;
-    background-color: chartreuse;
+.content1 {
+    width:100%;
+}
+
+.information1 {
+    width:100%;
+    height:min-content;
+    margin-bottom:  0px;
+}
+
+.name1 {
+    height: 50px;
+    font-size: 24px;
+    color:#303030;
+}
+
+.date1 {
+    height:50px;
+    font-size: 18px;
+    color: #303030;
+}
+
+.comment1 {
+    min-height: 50px;
+    margin:10px;
+    padding:15px;
+    color: #232323;
     clear:both;
+}
+.comment1 p {
+    color:#303030;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    width:95%;
+    size: 2px;
+    color:#303030;
+}
+
+.leaves2  {
+    display:flex;
+    margin: 5px;
+}
+
+li {
+    list-style: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    float:left;
+}
+
+.icon2 {
+    width: 80px;
+    height: 80px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    margin: 10px;
+    margin-bottom: 80px;
+}
+
+.content2 {
+    width:100%;
+}
+
+.information2 {
+    width:100%;
+    height:min-content;
+    margin-bottom:  0px;
+}
+
+.name2 {
+    height: 50px;
+    font-size: 24px;
+    color:#303030;
+}
+
+.date2 {
+    height:50px;
+    font-size: 18px;
+    color: #303030;
+}
+
+.comment2 {
+    min-height: 50px;
+    margin:10px;
+    padding:15px;
+    color: #232323;
+    clear:both;
+}
+.comment2 p {
+    color:#303030;
+    margin: 0;
+    padding: 0;
 }

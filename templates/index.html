@@ -1,14 +1,19 @@
 {%- extends "layout.html" %}
-{%- block content %}    
+{%- block content %}
 <div class="main">
-    <div class="tweet1">
-    <div class="iconcontena">
-    <li class="circle1"></li>
-    <li class="account-name1">赤い色素</li>
+  <div class="place-bar">全学教育棟</div>
+  
+  <div class="tweet1">
+    <div class="tweet-information1">
+      <li class="icon1"></li>
+      <li class="accountname1">さぼてん</li>
+      <li class="date1">（2020-01-01 12:30:20）</li>
     </div>
-    <div>
-    <div class="box1">つい―――――――と</div>
-    </div>
+  </div>
+  <div class="tweet-content1">
+    <p>ここに文章</p>
+  </div>
+
     <!-- こちらデータベースから取ってくるところ(テッピー作) -->
     {% for tweet in tweets %}
     <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
