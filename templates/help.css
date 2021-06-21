@@ -34,7 +34,7 @@ li {
 
 .icon1 {
     width: 80px;
-    height: 80px;
+    height: auto;
     background-color: #c4c4c4;
     border-radius: 50%;
     margin: 10px;
@@ -98,7 +98,7 @@ li {
 
 .icon2 {
     width: 80px;
-    height: 80px;
+    height: auto;
     background-color: #c4c4c4;
     border-radius: 50%;
     margin: 10px;
@@ -139,3 +139,21 @@ li {
     margin: 0;
     padding: 0;
 }
+
+.row-align-items-start {
+    margin:5%;
+    color:#303030;
+}
+
+.col-2 {
+    padding-left: 10px;
+    min-height: 180px;
+}
+
+.bi bi-chevron-right {
+    font-size: 90%;
+}
+
+
+
+
