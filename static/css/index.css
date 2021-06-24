@@ -3,49 +3,27 @@ body {
 
 }
 
-.header {
-    color:#fff ;
-    background-color:#6fcf97 ;
-    height: 120px;
-    padding:15px;
+#fir .row {
+    margin:5%;
 }
 
-.header-logo {
-    margin: 5px;
-    font-size: 36px;
+#sec .col-auto {
+    padding:none;
+    margin:5px;
 }
 
-li {
- list-style: none;
- float:left;
- padding:10px;
- font-size: 20px;
+#fou .col-auto {
+    font-size: 24px;
+    color:#303030;
 }
 
-.icon1 {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #6fcf97;
-    margin: 10px;
+#fiv .col {
+    font-size: 18px;
+    color:#303030;
 }
 
-.account-name1 {
-    font-size: 28px;
-    padding: auto;
+.col-12 {
+    font-size: 20px;
+    color: #303030;
+    background-color: whitesmoke;
 }
-
-.box1 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight:bold;
-    border: solid 3px #c4c4c4;
-}
-
-.box1 p {
-    margin: 0;
-    padding:0;
-}
-
-<!--以下grid頑張ったところ-->
-

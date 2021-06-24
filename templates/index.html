@@ -1,44 +1,39 @@
 {%- extends "layout.html" %}
 {%- block content %}
-<div class="main">
-  <div class="place-bar">全学教育棟</div>
-  
-  <div class="tweet1">
-    <div class="tweet-information1">
-      <li class="icon1"></li>
-      <li class="accountname1">さぼてん</li>
-      <li class="date1">（2020-01-01 12:30:20）</li>
-    </div>
-  </div>
-  <div class="tweet-content1">
-    <p>ここに文章</p>
-  </div>
-  
+ <div class="main">
 
-  <div class="container1">
-    <div class="row justify-content-start">
-      <div class="col-1">
-        <div class="circle"></div>
+  <div class="container-fluid">
+    <div class="row" id=fir>
+      <div class="col-auto" id="sec">
+        <svg xmlns="http://www.w3.org/2000/svg" width="90px" height="90px"
+          fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16
+          16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0
+              8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757
+              1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+        </svg>
       </div>
-      <div class="col-2">
+      <div class="col" id="thi">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-auto" id="fou">ここにアカウント名を表示</div>
+          <div class="col" id="fiv">(ここに日付を表示)</div>
+        </div>
         <div class="row">
-          <div class="row align-items-center justify-content-start">
-            <div class="col-3">ここにアカウント名を表示</div>
-            <div class="col-4">(ここに日付を表示)</div>
-          </div>
-          <div class="row">
-            <div class="col-5">
-            　<p>ここにツイート内容を表示</p>
-            </div>
+          <div class="col-12">
+           <p>ここにツイート内容を表示</p>
           </div>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
+  
+  <hr>
 
     <!-- こちらデータベースから取ってくるところ(テッピー作) -->
     {% for tweet in tweets %}
     <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
     {% endfor %}
+
 </div>
 {%- endblock %}
