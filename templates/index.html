@@ -2,10 +2,20 @@
 {%- block content %}
  <div class="main">
 
-  <div class="container-fluid">
-    <div class="row" id=fir>
-      <div class="col-auto" id="sec">
-        <svg xmlns="http://www.w3.org/2000/svg" width="90px" height="90px"
+  <div class="container-fluid　m-2 p-1 text-secondly bg-secondly">
+    <div class="row p-1">
+      <div class="col-auto">{選択場所}</div>
+      <div class="col-auto">leaves一覧</div>
+    </div>
+  </div>
+
+  <div class="container-fluid m-2 p-1 text-thirdly">
+    {% for tweet in tweets %}
+    <hr>
+
+    <div class="row m-2" id=fir>
+      <div class="col-auto p-1" id="sec">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
           fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16
           16">
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -14,26 +24,30 @@
               1.225 5.468 2.37A7 7 0 0 0 8 1z" />
         </svg>
       </div>
-      <div class="col" id="thi">
-        <div class="row align-items-center justify-content-start">
-          <div class="col-auto" id="fou">ここにアカウント名を表示</div>
-          <div class="col" id="fiv">(ここに日付を表示)</div>
+      <div class="col p-1" id="thi">
+        <div class="row m-2 align-items-center justify-content-start">
+          <div class="col-auto p-1" id="fou">{{tweet.name}}</div>
+          <div class="col p-1" id="fiv">{{tweet.created_at}}</div>
         </div>
-        <div class="row">
-          <div class="col-12">
-           <p>ここにツイート内容を表示</p>
+        <div class="row m-2">
+          <div class="col-12 p-1">
+           <p>{{tweet.content}}</p>
           </div>
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
   
   <hr>
 
     <!-- こちらデータベースから取ってくるところ(テッピー作) -->
-    {% for tweet in tweets %}
-    <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
-    {% endfor %}
+    <!-- {% for tweet in tweets %}
+    <p>
+      <li class="circle"></li>
+      <hr>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</hr>
+    </p>
+    {% endfor %} -->
 
 </div>
 {%- endblock %}
