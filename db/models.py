@@ -45,6 +45,10 @@ class Tweet(Base):
     def all(cls):
         return db_session.query(cls).all()
     
+    @classmethod
+    def get_positions(cls):
+        return db_session.query(cls.position_x, cls.position_y).all()
+
     def save(self):
         db_session.add(self)
         db_session.commit()

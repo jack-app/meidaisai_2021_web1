@@ -1,6 +1,8 @@
 {%- extends "layout.html" %}
 {%- block content %}    
 <div class="main">
+    <img src="../static/images/マップ 1.png" id="map">
+
     <div class="tweet1">
     <div class="iconcontena">
     <li class="circle1"></li>
@@ -12,6 +14,18 @@
     <!-- こちらデータベースから取ってくるところ(テッピー作) -->
     {% for tweet in tweets %}
     <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
+    {{tweet.position_x}} {{tweet.position_y}}
     {% endfor %}
 </div>
+
+<script type="text/javascript" src="../static/js/index.js"></script>
+
+<style>
+.pin{
+    position:fixed;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+}
+</style>
 {%- endblock %}
