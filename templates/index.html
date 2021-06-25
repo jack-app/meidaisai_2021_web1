@@ -1,31 +1,56 @@
 {%- extends "layout.html" %}
-{%- block content %}    
-<div class="main">
+{%- block content %}
+ <div class="main">
     <img src="../static/images/マップ 1.png" id="map" class="img-fluid">
+  <div class="container-fluid　m-2 p-1 text-secondly bg-secondly">
+    <div class="row p-1">
+      <div class="col-auto">{選択場所}</div>
+      <div class="col-auto">leaves一覧</div>
+    </div>
+  </div>
 
-    <div class="tweet1">
-    <div class="iconcontena">
-    <li class="circle1"></li>
-    <li class="account-name1">赤い色素</li>
-    </div>
-    <div>
-    <div class="box1">つい―――――――と</div>
-    </div>
-    <!-- こちらデータベースから取ってくるところ(テッピー作) -->
+  <div class="container-fluid m-2 p-1 text-thirdly">
     {% for tweet in tweets %}
-    <p>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</p>
-    {{tweet.position_x}} {{tweet.position_y}}
+    <hr>
+
+    <div class="row m-2" id=fir>
+      <div class="col-auto p-1" id="sec">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+          fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16
+          16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0
+              8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757
+              1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+        </svg>
+      </div>
+      <div class="col p-1" id="thi">
+        <div class="row m-2 align-items-center justify-content-start">
+          <div class="col-auto p-1" id="fou">{{tweet.name}}</div>
+          <div class="col p-1" id="fiv">{{tweet.created_at}}</div>
+        </div>
+        <div class="row m-2">
+          <div class="col-12 p-1">
+           <p>{{tweet.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
     {% endfor %}
+  </div>
+  
+  <hr>
+
+    <!-- こちらデータベースから取ってくるところ(テッピー作) -->
+    <!-- {% for tweet in tweets %}
+    <p>
+      <li class="circle"></li>
+      <hr>{{tweet.name}}：{{tweet.content}}（{{tweet.created_at}}）</hr>
+    </p>
+    {% endfor %} -->
+
 </div>
 
 <script type="text/javascript" src="../static/js/index.js"></script>
 
-<style>
-.pin{
-    position:fixed;
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-}
-</style>
 {%- endblock %}
