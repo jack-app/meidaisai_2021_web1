@@ -4,6 +4,8 @@ services:
   app:
     build: .
     command: python main.py
+    environment:
+      TZ: Asia/Tokyo
     tty: true
     volumes:
       - ./:/usr/src/app
