@@ -4,14 +4,20 @@
     <a href="/">
     <i class="bi bi-arrow-left"></i>
     </a>
-    <form action="/tweet" method="post">
+    <form action="/tweet" method="post" name="tweetForm">
         <p>名前を入力<br>
             <input type="text" name="name">
         </p>
         <p>つぶやきを入力<br>
-            <input type="text" name="content"></textarea>
+            <input type="text" name="content">
         </p>
+        <img src="../static/images/マップ 1.png" id="map">
+        <input type="text" name="positionX">
+        <input type="text" name="positionY">
+
         <input type="submit" value="送信">
     </form>
 </main>
+
+<script type="text/javascript" src="../static/js/position.js"></script>
 {%- endblock %}
