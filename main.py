@@ -1,4 +1,5 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, request, redirect
+from flask.wrappers import Request
 from db.database import init_db
 from db.models import Tweet
 
@@ -9,19 +10,17 @@ def index():
     tweets = Tweet.all()
     return render_template("index.html",tweets=tweets)
 
-@app.route("/shikiso")
-def shikisoshikiso():
-    name = request.args.get("name")
-    return render_template("akaishikiso.html")
-
-@app.route("/tweet")
+@app.route("/tweet",methods=["get","post"])
 def tweet():
-    return render_template("tweet.html")
+    if request.method == 'GET':
+        return render_template("tweet.html")
+    elif request.method == 'POST':
+        name=request.form["name"]
+        content=request.form["content"]
+        t = Tweet(name=name, content=content, position_x='座標X', position_y='座標Y')
+        t.save() 
+        return redirect('/')
 
-@app.route("/shikiso",methods=["post"])
-def post():
-    name = request.args.get("name")
-    return render_template("akaishikiso.html",name=name)
 
 if __name__ == "__main__" :
     init_db()
