@@ -1,20 +1,20 @@
 {%- extends "layout.html" %}
 {%- block content %}
 <div class="main">
-    <div class="container-fluid　m-2 p-1 text-secondly bg-secondly">
-        <div class="row p-1">
+    <div class="container-fluid text-secondly bg-secondly">
+        <div class="row">
             <div class="col-auto">{選択場所}</div>
             <div class="col-auto">leaves一覧</div>
         </div>
     </div>
 
     <img src="../static/images/マップ 1.png" id="map" class="img-fluid">
-    <div class="container-fluid m-2 p-1 text-thirdly">
+    <div class="container-fluid text-thirdly">
         {% for tweet in tweets %}
         <hr>
 
         <div class="row m-2" id=fir>
-            <div class="col-auto p-1" id="sec">
+            <div class="col-auto" id="sec">
                 <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor"
                     class="bi bi-person-circle" viewBox="0 0 16
           16">
@@ -27,7 +27,7 @@
             <div class="col p-1" id="thi">
                 <div class="row m-2 align-items-center justify-content-start">
                     <div class="col-auto p-1" id="fou">{{tweet.name}}</div>
-                    <div class="col p-1" id="fiv">{{tweet.created_at}}</div>
+                    <div class="col p-1" id="fiv">{{tweet.created_at_text}}</div>
                 </div>
                 <div class="row m-2">
                     <div class="col-12 p-1">
@@ -37,6 +37,12 @@
             </div>
         </div>
         {% endfor %}
+
+        <a style="position:fixed; bottom: 5vh; right: 5vw;" href="/tweet">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#6fcf97" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+        </a>
     </div>
 
     <hr>

@@ -13,18 +13,18 @@ element = parent.appendChild(element)
 fetch('/get_positions')
   .then(response => response.json())
   .then(data => {
-    console.log(data["positions"])
+    // console.log(data["positions"])
     data["positions"].forEach(position => {
       let element = document.createElement("div")
 			element = parent.appendChild(element)
-			console.log(element)
+			// console.log(element)
 			var clientRect = map.getBoundingClientRect() ;
 			var positionX = clientRect.left + window.pageXOffset ;
 			var positionY = clientRect.top + window.pageYOffset ;
       let imgTop = imgHeight*position.position_y + positionY
       let imgLeft = imgWidth*position.position_x + positionX
-			console.log(imgHeight*position.position_x)
-			console.log(imgWidth*position.position_y)
+			// console.log(imgHeight*position.position_x)
+			// console.log(imgWidth*position.position_y)
       element.style.cssText = `position:absolute; top: ${imgTop}px; left: ${imgLeft}px; width: 10px; height: 10px; border-radius: 50%; background-color:red;`;
     });
   });
