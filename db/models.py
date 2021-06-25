@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String, Text, DateTime, desc
 from sqlalchemy.ext.hybrid import hybrid_property
 from db.database import Base, db_session
 from datetime import datetime
@@ -30,7 +30,7 @@ class Tweet(Base):
     content = Column(Text)
     position_x = Column(String(128))
     position_y = Column(String(128))
-    created_at = Column(DateTime, default=datetime.now())
+    created_at = Column(DateTime)
 
     def __init__(self, name=None, content=None, position_x = None, position_y = None, created_at=None):
         self.name = name
@@ -38,12 +38,13 @@ class Tweet(Base):
         self.created_at = created_at
         self.position_x = position_x
         self.position_y = position_y
+        self.created_at = datetime.now()
     def __repr__(self):
         return '<Tweet { id = %r, name = %r, content = %r, created_at = %r}>' % (self.id, self.name, self.content, self.created_at)
     
     @classmethod
     def all(cls):
-        return db_session.query(cls).all()
+        return db_session.query(cls).order_by(desc(cls.created_at)).all()
     
     @classmethod
     def get_positions(cls):
